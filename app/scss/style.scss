@@ -1,0 +1,148 @@
+@import 'vars'; /*сюда писать переменные для цвета, для шрифта и т.д. и кусочки кода*/
+@import 'fonts';
+@import 'reset';/*сюда пишу reset.css*/
+@import 'global';/*что я пишу для body, для ссылок и т.д*/
+@import 'media'; /*медиазапросы*/
+
+
+.header{
+   background-color: #C8A35F;
+}
+.header-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  &__language{
+    display: flex;
+  }
+  &__language-btn{
+    padding-right: 10px;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  &__language-btn--active{
+    opacity: 0.5;
+  }
+}
+.header-nav{
+  background-color: $dark;
+  
+  
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 42px 0;
+    text-transform: uppercase;
+  }
+  &__box{
+    display: flex;
+  }
+  &__logo{
+    margin-right: 60px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -30px;
+      width: 1px;
+      height: 46px;
+      background-color: #fff;
+    }
+  }
+  &__map{
+    position: relative;
+    padding-left: 35px;
+    display: inline-flex;
+    align-items: center;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background-image: url('../images/icons/placeholder.svg');
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &__menu-link{
+    margin-right: 30px;
+    &:nth-child(4){
+      margin-right: 0px;
+    }
+  }
+}
+.top{
+  &__content{
+    
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content-box{
+    border: 1px solid #C8A35F;
+    padding: 45px 71px;
+    max-width: 920px;
+    margin-top: 155px;
+    
+  }
+  &__content-title{
+    font-size: 64px;
+    margin-bottom: 45px;
+  }
+  &__content-text{
+    display: block;
+    font-size: 18px;
+    margin: 0 35px;
+  }
+  &__content-icon{
+    margin-bottom: 50px;
+  }
+}
+.footer{
+  background-color: $gold;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0 55px;
+  }
+  &__box{
+    display: flex;
+  }
+  &__logo{
+    margin-right: 30px;
+  }
+  &__adress{
+    opacity: 0.8;
+    line-height: 32px;
+  }
+  &__mail{
+    color: $dark;
+  }
+  &__phone{
+    display: inline-flex;
+    flex-direction: column;
+  }
+  &__phone-tel{
+    line-height: 32px;
+  }
+  .footer-map{
+    height: 450px;
+    margin: 0 auto;
+  }
+}
+.developer{
+  color: $dark;
+}
