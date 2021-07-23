@@ -3,6 +3,7 @@
 @import 'reset';/*сюда пишу reset.css*/
 @import 'global';/*что я пишу для body, для ссылок и т.д*/
 @import 'media'; /*медиазапросы*/
+@import 'libs'; 
 
 
 .header{
@@ -145,4 +146,100 @@
 }
 .developer{
   color: $dark;
+}
+
+.top-slider{
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 765px;
+    height: 100%;
+    background-color: $grey;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 790px;
+    height: 100%;
+    background-color: $grey;
+    z-index: -1;
+  }
+  &__inner{
+    padding: 120px 0 128px;
+  }
+  &__box{
+    display: flex!important;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 900px;
+    padding-left: 2px;
+  }
+  &__content{
+    max-width:380px;
+  }
+  &__title{
+    padding-top: 46px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 6px;
+      background-color: $gold;
+    }
+  }
+  &__text{
+    margin-bottom: 50px;
+    
+  }
+  &__link{
+    background-color: $gold;
+    padding: 18px 48px;
+    text-transform: uppercase;
+    display: inline-flex;
+  }
+  &__img{
+    order: 99;
+  }
+}
+
+.slick-prev,
+.slick-next{
+  display: flex;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  padding: 0px;
+  cursor: pointer;
+}
+.prev-text{
+  margin-left: 30px;
+  color: $gold;
+  @extend %roboto-500;
+}
+.next-text{
+  margin-right: 30px;
+  color: $gold;
+  @extend %roboto-500;
+}
+.slick-prev{
+  position: absolute;
+  bottom: 330px;
+  right: 5px;
+  transform: translateY(650%);
+  line-height: 35px;
+}
+.slick-next{
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  transform: translateY(370%);
+  line-height: 35px;
 }
