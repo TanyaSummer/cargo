@@ -101,6 +101,8 @@
   &__content-title{
     font-size: 64px;
     margin-bottom: 45px;
+    text-transform: uppercase;
+    @extend %roboto-700;
   }
   &__content-text{
     display: block;
@@ -180,21 +182,6 @@
   &__content{
     max-width:380px;
   }
-  &__title{
-    padding-top: 46px;
-    position: relative;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    &::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 90px;
-      height: 6px;
-      background-color: $gold;
-    }
-  }
   &__text{
     margin-bottom: 50px;
     
@@ -242,4 +229,34 @@
   right: 5px;
   transform: translateY(370%);
   line-height: 35px;
+}
+
+.service{
+  &__categories{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.2em;
+  }
+  &__categories-inner{
+    width: 270px;
+    padding: 128px 42px 35px;
+    background-color: $grey;
+    display: inline-block;
+    text-align: center;
+    @extend %roboto-700;
+    font-size: 18px;
+    position: relative;
+  }
+  &__categories-inner::before{
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 103px;
+    background-image: url('../images/icons/fly.svg');
+    width: 70px;
+    height: 70px;
+  }
+  &__categories-inner--active{
+    background-color: $gold;
+  }
 }

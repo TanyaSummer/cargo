@@ -32,8 +32,22 @@ a{
   line-height: 16px;
   color: $default;
   @extend %roboto-400;
+  padding: 0;
 }
 .title{
   @extend %roboto-700;
   font-size: 40px;
+  padding-top: 46px;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 6px;
+    background-color: $gold;
+  }
 }
