@@ -30,17 +30,20 @@
 }
 .header-nav{
   background-color: $dark;
-  
+  &__btn{
+    display: none;
+  }
   
   &__inner{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 42px 0;
-    text-transform: uppercase;
   }
   &__box{
     display: flex;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
   }
   &__logo{
     margin-right: 60px;
@@ -55,16 +58,17 @@
       background-color: #fff;
     }
   }
-  &__map{
+  &__map-link{
     position: relative;
     padding-left: 35px;
     display: inline-flex;
     align-items: center;
+    font-size: 16px;
     &::before{
       content: '';
       position: absolute;
       left: 0;
-      top: 8px;
+      top: -4px;
       background-image: url('../images/icons/placeholder.svg');
       width: 25px;
       height: 25px;
@@ -72,6 +76,7 @@
   }
   &__menu-link{
     margin-right: 30px;
+    text-transform: uppercase;
     &:nth-child(4){
       margin-right: 0px;
     }
@@ -155,7 +160,7 @@
   &::before{
     content: '';
     position: absolute;
-    width: 765px;
+    width: 40%;
     height: 100%;
     background-color: $grey;
   }
@@ -164,7 +169,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 790px;
+    width: 40%;
     height: 100%;
     background-color: $grey;
     z-index: -1;
@@ -232,13 +237,14 @@
 }
 
 .service{
+  padding: 120px 0;
   &__categories{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.2em;
   }
   &__categories-inner{
-    width: 270px;
+    max-width: 270px;
     padding: 128px 42px 35px;
     background-color: $grey;
     display: inline-block;
@@ -246,6 +252,9 @@
     @extend %roboto-700;
     font-size: 18px;
     position: relative;
+    &:hover{
+      background-color: $gold;
+    }
   }
   &__categories-inner::before{
     content: '';
@@ -256,7 +265,168 @@
     width: 70px;
     height: 70px;
   }
-  &__categories-inner--active{
-    background-color: $gold;
+  
+}
+
+.about{
+  position: relative;
+  margin-bottom: 120px;
+  padding: 80px 0;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 410px;
+    height: 482px;
+    background-color: $grey;
+    z-index: -1;
+    top: 0px;
+    right: 40%;
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text{
+    max-width: 445px;
+    line-height: 23px;
+    font-size: 16px;
+  }
+  &__counter{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr );
+  }
+  &__counter-item{
+    display: block;
+    background-color: $default;
+    padding: 23px;
+    text-align: center;
+    font-size: 64px;
+    line-height: 75px;
+    color: $dark;
+    border: 0.25px solid $gold;
+    span{
+      display: block;
+      font-size: 18px;
+      line-height: 21px;
+    }
+    span+span{
+      font-size: 12px;
+    }
   }
 }
+
+@media (max-width: 1450px){
+  .service{
+    &__categories{
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: stretch;
+    }
+    &__categories-inner{
+      max-width: 100%;
+      padding: 128px 58px 35px;
+      &::before{
+        top: 20%;
+        left: 40%;
+      }
+    }
+  }
+  
+}
+
+@media (max-width: 920px){
+  .top{
+    &__content-title{
+      font-size: 41px;
+      text-align: center;
+    }
+    &__content-text{
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 862px){
+  
+  .next-text,
+  .prev-text{
+    display: none;
+  }
+  .slick-next{
+    right: 35%;
+    top: 70%;
+  }
+  .slick-prev{
+    right: 55%;
+    bottom: 38%;
+  }
+}
+
+@media (max-width: 800px){
+  .header-top{
+    display: none;
+  }
+  .header-nav__map-link{
+    padding-left: 0;
+      text-transform: uppercase;
+    &::before{
+      display: none;
+    }
+  }
+  .header-nav__box{
+    position: absolute;
+    right: 107px;
+    top: 0px;
+    // left: 0;
+    display: block;
+    text-align: center;
+    transform: translateY(-200%);
+    transition: all .5s;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.405);
+    width: 50%;
+    margin: 0 auto;
+  }
+  .header-nav__box--active{
+    transform: translateY(0);
+  }
+  .header-nav{
+    &__inner{
+      justify-content: space-between;
+      padding: 18px 0
+    }
+    &__btn{
+      display: block;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    &__map{
+      margin-bottom: 15px;
+    }
+    &__menu{
+      display: block;
+    }
+    &__menu-link{
+      display: block;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+  .title{
+    font-size: 30px;
+  }
+
+
+  .service{
+    &__categories{
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: stretch;
+      
+    }
+  }
+
+}
+
