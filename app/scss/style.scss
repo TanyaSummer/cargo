@@ -286,6 +286,9 @@
     display: flex;
     justify-content: space-between;
   }
+  &__content{
+    padding-right: 15px;
+  }
   &__text{
     max-width: 445px;
     line-height: 23px;
@@ -298,7 +301,7 @@
   &__counter-item{
     display: block;
     background-color: $default;
-    padding: 23px;
+    padding: 20px;
     text-align: center;
     font-size: 64px;
     line-height: 75px;
@@ -332,7 +335,27 @@
   }
   
 }
-
+@media (max-width: 1100px){
+  .about{
+    &__inner{
+      flex-direction: column;
+    }
+    &__counter-item{
+      font-size: 48px;
+    }
+    &__counter-img{
+      display: none;
+    }
+    &__text{
+      max-width: 100%;
+      text-align: center;
+    }
+    &__counter{
+      grid-template-columns: repeat(3, 1fr);
+      padding: 15px 20px;
+    }
+  }
+}
 @media (max-width: 920px){
   .top{
     &__content-title{
@@ -346,7 +369,6 @@
 }
 
 @media (max-width: 862px){
-  
   .next-text,
   .prev-text{
     display: none;
@@ -359,6 +381,7 @@
     right: 55%;
     bottom: 38%;
   }
+  
 }
 
 @media (max-width: 800px){
