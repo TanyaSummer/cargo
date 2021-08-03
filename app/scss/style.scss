@@ -339,6 +339,7 @@
   .about{
     &__inner{
       flex-direction: column;
+      align-items: center;
     }
     &__counter-item{
       font-size: 48px;
@@ -385,6 +386,7 @@
 }
 
 @media (max-width: 800px){
+
   .header-top{
     display: none;
   }
@@ -397,7 +399,7 @@
   }
   .header-nav__box{
     position: absolute;
-    right: 107px;
+    right: 0px;
     top: 0px;
     // left: 0;
     display: block;
@@ -405,14 +407,19 @@
     transform: translateY(-200%);
     transition: all .5s;
     padding: 30px 0;
-    background-color: rgba(0, 0, 0, 0.405);
-    width: 50%;
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
     margin: 0 auto;
   }
   .header-nav__box--active{
     transform: translateY(0);
   }
   .header-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     &__inner{
       justify-content: space-between;
       padding: 18px 0
@@ -438,11 +445,12 @@
       margin-bottom: 15px;
     }
   }
+  .top{
+    margin-top: 80px;
+  }
   .title{
     font-size: 30px;
   }
-
-
   .service{
     &__categories{
       grid-template-columns: repeat(2, 1fr);
@@ -450,6 +458,98 @@
       
     }
   }
-
+  .footer{
+    &__inner,
+    &__box{
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    &__contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  }
 }
 
+@media (max-width: 680px){
+  .top-slider{
+    &__img {
+      width: 50%;
+    }
+  }
+  .about{
+    &__counter-item{
+      font-size: 40px;
+
+    }
+  }
+}
+@media (max-width: 490px){
+  .header-nav{
+    &__box{
+      right: 0px;
+      top: 0px;
+    }
+  }
+  .top{
+    &__content{
+      height: 535px;
+    }
+    &__content-box{
+      padding: 45px 20px;
+      margin: 80px 30px 40px;
+    }
+  }
+  .top-slider{
+    &__inner {
+      padding: 80px 0 80px;
+    }
+    .slick-prev{
+      width: 6%;
+      bottom: 39%;
+    }
+    .slick-next{
+      width: 6%;
+      top: 71%;
+    }
+  }
+  .slick-slide{
+    img {
+      display: none;
+    }
+  }
+  .service{
+    padding: 80px 0;
+    &__categories-inner{
+      padding: 120px 30px 30px;
+      font-size: 16px;
+    }
+    &__categories {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .about{
+    padding: 0;
+    margin-bottom: 80px;
+    &::before{
+      height: 216px;
+      top: 60px;
+    }
+    &__content{
+      padding-right: 0;
+    }
+    &__counter{
+      grid-template-columns: repeat(1, 1fr);
+      width: 50%;
+      margin: 20px auto 0;
+      padding: 0;
+    }
+  }
+  .footer{
+    &__inner{
+      padding: 30px 0 30px;
+    }
+  }
+}
