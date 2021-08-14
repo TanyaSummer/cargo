@@ -1,5 +1,20 @@
 $(function(){
 
+  $(".header-nav__box a").on("click", function (e) {
+		//отменяем стандартную обработку нажатия по ссылке
+		e.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+
+
   $('.top-slider__inner').slick({
     arrows:true,
     infinite: true,
