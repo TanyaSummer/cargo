@@ -553,3 +553,14 @@
     }
   }
 }
+@media (max-width: 400px){
+  .top{
+    &__content-box{
+      padding: 35px 20px;
+      margin: 65px 30px 40px;
+    }
+    &__content-text{
+      margin: 0;
+    }
+  }
+}
